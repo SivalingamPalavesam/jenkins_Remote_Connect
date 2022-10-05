@@ -1,0 +1,52 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h2 {
+	text-align: center;
+}
+
+th {
+	
+}
+
+table, th, td {
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	width: 300px;
+	text-align: center;
+	font-size: 20px;
+	padding: 15px;
+}
+
+th, td {
+	border: 1px solid black;
+	border-radius: 10px;
+}
+</style>
+</head>
+<body>
+	<h2>Spring Boot Jenkins All Status</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>result</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="fromJsonArray1 : ${fromJsonArray1}">
+				<td th:text="${fromJsonArray1.id}"></td>
+				<td th:text="${fromJsonArray1.result}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

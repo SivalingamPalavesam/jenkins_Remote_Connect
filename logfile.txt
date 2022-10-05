@@ -1,0 +1,42 @@
+Started by remote host 127.0.0.1
+Running as SYSTEM
+Building in workspace C:\Users\ELCOT\.jenkins\workspace\vote-polling-system
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\Users\ELCOT\.jenkins\workspace\vote-polling-system\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/SivalingamPalavesam/vote-polling-system-template.git # timeout=10
+Fetching upstream changes from https://github.com/SivalingamPalavesam/vote-polling-system-template.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.35.1.windows.2'
+ > git.exe fetch --tags --force --progress -- https://github.com/SivalingamPalavesam/vote-polling-system-template.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 018add0ea24be495dc06be4732e4c0cff484299d (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 018add0ea24be495dc06be4732e4c0cff484299d # timeout=10
+Commit message: "vote polling system project"
+ > git.exe rev-list --no-walk 018add0ea24be495dc06be4732e4c0cff484299d # timeout=10
+[Gradle] - Launching build.
+[vote-polling-system] $ cmd.exe /C "gradle.bat && exit %%ERRORLEVEL%%"
+Starting a Gradle Daemon, 2 incompatible and 1 stopped Daemons could not be reused, use --status for details
+
+> Task :help
+
+Welcome to Gradle 7.5.1.
+
+To run a build, run gradle <task> ...
+
+To see a list of available tasks, run gradle tasks
+
+To see more detail about a task, run gradle help --task <task>
+
+To see a list of command-line options, run gradle --help
+
+For more detail on using Gradle, see https://docs.gradle.org/7.5.1/userguide/command_line_interface.html
+
+For troubleshooting, visit https://help.gradle.org
+
+BUILD SUCCESSFUL in 1m 58s
+1 actionable task: 1 executed
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+Finished: SUCCESS

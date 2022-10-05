@@ -1,0 +1,89 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Spring Boot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h2 {
+	text-align: center;
+}
+
+th {
+	
+}
+
+table, th, td {
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	width: 800px;
+	text-align: center;
+	font-size: 20px;
+	padding: 15px;
+}
+
+th, td {
+	border: 1px solid rgb(0, 128, 128);
+	border-radius: 10px;
+}
+</style>
+</head>
+<body>
+	<h2>Spring Boot Jenkins Jobs</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Jenkins Name</th>
+				<th>Build</th>
+				<th>All Build History</th>
+				<th>Current Build History</th>
+				<th>Log file</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="fromJsonArray : ${fromJsonArray}">
+
+				<form action="#" th:action="@{/build} " method="post">
+					<td th:text="${fromJsonArray.name}"></td>
+				</form>
+
+				<form action="#" th:action="@{/build} " method="post">
+					<td>
+						<!-- <input type="hidden" th:value="${fromJsonArray.name}" th:name="test" /> -->
+						<button th:value="${fromJsonArray.name}" th:name="test">BUILD</button>
+					</td>
+				</form>
+
+				<form action="#" th:action="@{/status}" method="post">
+					<td>
+						<!-- <input type="hidden" th:value="${fromJsonArray.name}" th:name="buildname" /> -->
+						<button th:value="${fromJsonArray.name}" th:name="buildname">BUILD
+							HISTORY</button>
+					</td>
+
+				</form>
+				<form action="#" th:action="@{/currentBuild}" method="get">
+					<td>
+						<button th:value="${fromJsonArray.name}"
+							th:name="currentBuildName">CURRENT BUILD HISTORY</button>
+					</td>
+				</form>
+
+				<form action="#" th:action="@{/downloadFile}" method="get">
+					<td>
+						<button th:value="${fromJsonArray.name}" th:name="Logfile"
+							type="submit" download>Log File Download</button>
+					</td>
+				</form>
+
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
